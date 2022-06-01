@@ -319,7 +319,7 @@ if test x"$enable_python" = xyes; then
   if test -n "$PYTHON_BIN"; then
     # find out python version
     AC_MSG_CHECKING(Python version)
-    PyVERSION=`$PYTHON_BIN -c ['import sys; print(sys.version[:3])'`]
+    PyVERSION=`$PYTHON_BIN -c ['import sys; ver=sys.version.split("."); print(ver[0],".",ver[1],sep="",end="")'`]
     PyMAJVERSION=`$PYTHON_BIN -c ['import sys; print(sys.version[:1])'`]
     AC_MSG_RESULT($PyVERSION)
     PYTHON_VERSION=$PyVERSION
